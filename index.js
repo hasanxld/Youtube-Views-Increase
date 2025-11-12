@@ -3,7 +3,7 @@ const cors = require('cors');
 const handleProxy = require('./proxy');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 8080; // Custom port from environment or default
 
 app.use(cors());
 app.use(express.json());
@@ -296,6 +296,7 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 YouTube Viewer Server running on http://localhost:${PORT}`);
-  console.log(`📺 Educational Purpose Only - Use Responsibly`);
+  console.log(`🚀 YouTube Viewer Server running on PORT: ${PORT}`);
+  console.log(`📺 Access your server: http://localhost:${PORT}`);
+  console.log(`⚠️  Educational Purpose Only - Use Responsibly`);
 });
