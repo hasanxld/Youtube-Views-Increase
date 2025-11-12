@@ -1,7 +1,7 @@
 {
-  "name": "youtube-views-increase",
+  "name": "youtube-views-booster",
   "version": "1.0.0",
-  "description": "Advanced YouTube Views Increase Tool with Proxy Rotation",
+  "description": "Advanced YouTube Views Booster with Real Proxy Rotation",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -11,7 +11,6 @@
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
-    "user-agents": "^1.1.1",
     "https-proxy-agent": "^7.0.0",
     "http-proxy-agent": "^5.0.0"
   }
