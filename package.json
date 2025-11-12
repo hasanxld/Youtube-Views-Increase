@@ -1,7 +1,7 @@
 {
-  "name": "youtube-proxy",
+  "name": "youtube-view-booster",
   "version": "1.0.0",
-  "description": "YouTube Viewer Proxy - Educational Purpose Only",
+  "description": "YouTube View Booster - Educational Testing Tool",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -10,6 +10,7 @@
     "express": "^4.18.0",
     "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "user-agents": "^1.1.1"
   }
 }
