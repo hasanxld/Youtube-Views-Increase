@@ -13,7 +13,6 @@ async function handleProxy(req, res) {
   
   if (!url) return res.status(400).json({ error: 'YouTube URL is required' });
   
-  // Validate YouTube URL
   if (!url.includes('youtube.com') && !url.includes('youtu.be')) {
     return res.status(400).json({ error: 'Please enter a valid YouTube URL' });
   }
@@ -25,7 +24,6 @@ async function handleProxy(req, res) {
 
     for (let i = 0; i < count; i++) {
       try {
-        // Add progressive delay
         if (i > 0) {
           const progressiveDelay = delay + (i * 500) + Math.random() * 3000;
           await new Promise(resolve => setTimeout(resolve, progressiveDelay));
@@ -35,6 +33,64 @@ async function handleProxy(req, res) {
           timeout: 15000,
           headers: {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'DNT': '1',
+            'Connection': 'keep-alive',
+            'Upgrade-Insecure-Requests': '1'
+          }
+        });
+
+        const $ = cheerio.load(response.data);
+        const title = $('title').text().replace(' - YouTube', '') || 'YouTube Video';
+        const channel = $('meta[itemprop="name"]').attr('content') || 'Unknown Channel';
+        
+        results.push({
+          attempt: i + 1,
+          status: 'success',
+          statusCode: response.status,
+          title: title,
+          channel: channel,
+          timestamp: new Date().toLocaleTimeString(),
+          delay: delay + 'ms'
+        });
+
+        successCount++;
+        console.log(`✅ View ${i + 1} sent to: ${title}`);
+
+      } catch (error) {
+        results.push({
+          attempt: i + 1,
+          status: 'error',
+          error: error.code || error.message,
+          timestamp: new Date().toLocaleTimeString(),
+          delay: delay + 'ms'
+        });
+        errorCount++;
+        console.log(`❌ View ${i + 1} failed: ${error.message}`);
+      }
+    }
+
+    res.status(200).json({
+      success: true,
+      target: url,
+      totalAttempts: count,
+      successCount: successCount,
+      errorCount: errorCount,
+      successRate: ((successCount / count) * 100).toFixed(2) + '%',
+      results: results
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+}
+
+module.exports = handleProxy;            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.5',
             'Accept-Encoding': 'gzip, deflate, br',
