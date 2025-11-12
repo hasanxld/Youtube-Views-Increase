@@ -1,0 +1,94 @@
+{
+  "proxies": [
+    {
+      "ip": "142.111.48.253",
+      "port": 7030,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "31.59.20.176",
+      "port": 6754,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "GB",
+      "provider": "webshare"
+    },
+    {
+      "ip": "23.95.150.145",
+      "port": 6114,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "198.23.239.134",
+      "port": 6540,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "45.38.107.97",
+      "port": 6014,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "107.172.163.27",
+      "port": 6543,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "198.105.121.200",
+      "port": 6462,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "64.137.96.74",
+      "port": 6641,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "216.10.27.159",
+      "port": 6837,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    },
+    {
+      "ip": "142.111.67.146",
+      "port": 5611,
+      "username": "brjdfpog",
+      "password": "mpju86u0yyqw",
+      "type": "http",
+      "country": "US",
+      "provider": "webshare"
+    }
+  ]
+}
